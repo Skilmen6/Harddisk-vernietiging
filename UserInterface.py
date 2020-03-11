@@ -1,12 +1,16 @@
 from tkinter import *
 root = Tk()
-root.geometry("800x480")
+root.attributes('-fullscreen', True)
 
 imgFrame = Frame(root)
 buttonFrame = Frame(root, bg="grey")
 
 photoImg = PhotoImage( file="forest.png") #jpg is not supported
 photoImg = photoImg.subsample(3, 3)
+
+def close_window(): 
+    root.destroy()
+
 
 imgPhoto = Label(
     imgFrame, 
@@ -25,7 +29,8 @@ btnYes = Button(
 btnQuit = Button(
     buttonFrame,
     text="Quit",
-    fg="red"
+    fg="red",
+    command=close_window
 )
 
 btnNo = Button(
