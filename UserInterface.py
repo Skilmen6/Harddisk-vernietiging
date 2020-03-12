@@ -1,12 +1,19 @@
 from tkinter import *
+from PIL import Image, ImageTk
 root = Tk()
+
+#for testing on Raspberry Pi
 root.attributes('-fullscreen', True)
+
+#for testing on Windows
+#root.geometry("800x480")
 
 imgFrame = Frame(root)
 buttonFrame = Frame(root, bg="grey")
 
-photoImg = PhotoImage( file="forest.png") #jpg is not supported
-photoImg = photoImg.subsample(3, 3)
+img = Image.open("blank.png")
+img = img.resize((675, 405), Image.ANTIALIAS) 
+photoImg = ImageTk.PhotoImage(img) 
 
 def close_window(): 
     root.destroy()
@@ -42,12 +49,12 @@ btnNo = Button(
     fg="white"
 )
 
-imgFrame.pack(padx=20, pady=20)
+imgFrame.pack()
 buttonFrame.pack(side=BOTTOM, fill="x")
 
 imgPhoto.pack()
 btnYes.pack(side=LEFT, anchor="w")
-btnQuit.place(relx=0.5)
+btnQuit.place(relx=0.5, rely=0.5, anchor="c")
 btnNo.pack(side=RIGHT, anchor="e")
 
 root.mainloop()
