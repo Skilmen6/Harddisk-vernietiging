@@ -1,0 +1,50 @@
+Change Log
+==========
+
+v0.2.7
+------
+- Removed unecessary __del__ magic method.
+- Updated simplewebcontrol so that it doesn't fall over if you don't have
+  all the boards specified with the 'num-boards' arg.
+
+v0.2.6
+------
+- simplewebcontrol now supports and/or masks.
+- Changed the relay port query string syntax.
+
+v0.2.5
+------
+- simplewebcontrol now supports multiple boards.
+
+v0.2.4
+------
+- Fixed bug when using the 'Relay' Plus-Board where the 'relay_port'
+  property would not be set correctly.
+- Fixed simplewebcontrol to return proper JSON.
+
+v0.2.3
+------
+- Added MANIFEST.in with readme and changelog and added setup.py for PyPI
+
+v0.2.2
+------
+- Added simplewebcontrol.
+
+v0.2.1
+------
+- Fixed bug with default GPIO configs for when there is no 'Extra Board'.
+
+v0.2.0
+------
+- Introduced new way of handling of inputs/outputs on plus-boards: x-port
+  and y-port.
+- Added MotorForwardReverseError and MotorTooSoonError.
+
+v0.1.1
+------
+- Fixed motors.
+- Fixed relay extender (for relay board initialisation).
+
+v0.1.0
+------
+- Inital structure.
